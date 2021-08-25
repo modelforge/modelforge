@@ -11,10 +11,13 @@
     "lint:fix": "yarn lint --fix",
     "modelforge": "modelforge -- contrib",
     "prepare": "husky install",
+    "lint-staged": "lint-staged --allow-empty",
     "format": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,json}\"",
     "format:diff": "prettier --config .prettierrc --check \"**/*.{js,jsx,ts,tsx,json}\""
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "commitizen": "^4.2.4",
@@ -28,7 +31,7 @@
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "4.3.8",
+    "husky": "^7.0.0",
     "lerna": "^4.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.3.2",
@@ -37,11 +40,6 @@
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
   "lint-staged": {
