@@ -8,7 +8,6 @@
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --cache \"**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "yarn lint -- --fix",
-    "pre-commit": "npx lint-staged@latest --allow-empty",
     "format": "prettier --config .prettierrc --write \"**/*.{js,jsx,ts,tsx,json}\"",
     "format:diff": "prettier --config .prettierrc --check \"**/*.{js,jsx,ts,tsx,json}\""
   },
