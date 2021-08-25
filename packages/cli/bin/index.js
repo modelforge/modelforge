@@ -41,6 +41,8 @@ const showWizard = () => {
   );
 
   const other = 'other (specify)';
+
+  // Ask user for details about the new app
   inquirer
     .prompt([
       {
@@ -67,6 +69,8 @@ const showWizard = () => {
     ])
     .then(async (answers) => {
       let {template} = answers;
+
+      // Capture custom template name
       if (template === other) {
         await inquirer
           .prompt([
@@ -80,13 +84,30 @@ const showWizard = () => {
             template = templateName || 'default';
           });
       }
-      processSelections(answers.name, template);
+
+      // Confirm new app creation
+      inquirer
+        .prompt([
+          {
+            type: 'confirm',
+            name: 'confirm',
+            message: chalk`Create a new ModelForge app in the following directory?\n  {yellow ${answers.name}}`,
+            default: true,
+          },
+        ])
+        .then(({confirm}) => {
+          if (confirm) {
+            // Process
+            processSelections(answers.name, template);
+          }
+        });
     });
 };
 
 const showContribWizard = () => {
   output(chalk`Welcome to the ModelForge Contributor Console!\n`);
 
+  // Ask contributors to choose a run-script command
   inquirer
     .prompt([
       {
@@ -107,6 +128,8 @@ const showContribWizard = () => {
     ])
     .then(async (answers) => {
       let {command} = answers;
+
+      // Ask if they want to fix lint errors
       if (command === 'lint') {
         await inquirer
           .prompt([
@@ -123,6 +146,8 @@ const showContribWizard = () => {
             }
           });
       }
+
+      // Ask if they want to show format differences only
       if (command === 'format') {
         await inquirer
           .prompt([
@@ -130,7 +155,7 @@ const showContribWizard = () => {
               type: 'confirm',
               name: 'diff',
               default: false,
-              message: 'Show differences only (dry run)?',
+              message: 'Show formatting differences only (dry run)?',
             },
           ])
           .then(({diff}) => {
@@ -139,6 +164,8 @@ const showContribWizard = () => {
             }
           });
       }
+
+      // Process
       processContribSelections(command);
     });
 };
@@ -191,7 +218,7 @@ program.arguments('<command>').action((cmd) => {
 });
 
 if (!process.argv.slice(2).length) {
-  program.outputHelp();
+  showWizard();
 } else {
   program.parse(process.argv);
 }

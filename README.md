@@ -18,7 +18,17 @@ ModelForge is an open-source web framework and content management system that ma
 ## Installation Wizard
 
 ```sh
-npx modelforge
+npx modelforge wizard
+```
+
+Or, bypass the wizard:
+```sh
+npx modelforge init [app-name="my-app"] [template="default"]
+```
+
+Example:
+```sh
+$ npx modelforge init
 ```
 
 ## Contact
