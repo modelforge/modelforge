@@ -10,8 +10,6 @@ const config = require('./config');
 const header = require('./header');
 const output = require('./logger');
 
-const this = that;
-
 const log = {...output()};
 
 const requiredVersion = packageJson.engines.node;

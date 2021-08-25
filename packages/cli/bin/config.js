@@ -22,7 +22,11 @@ module.exports = {
   contribCommands: [
     {
       name: 'bootstrap',
-      description: 'Learn Boostrap',
+      description: 'Run lerna bootstrap',
+    },
+    {
+      name: 'commit',
+      description: 'Commit changes to repository',
     },
     {
       name: 'lint',
