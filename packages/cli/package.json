@@ -1,0 +1,33 @@
+{
+  "name": "modelforge",
+  "version": "0.0.0",
+  "description": "Fast, flexible, and open-source CMS built with Node.js and React",
+  "license": "MIT",
+  "repository": "modelforge/modelforge",
+  "homepage": "https://modelforge.org",
+  "author": {
+    "name": "Doug Kulak",
+    "email": "dougkulak@gmail.com",
+    "url": "https://dougkulak.com"
+  },
+  "type": "module",
+  "bin": "./index.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {},
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "modelforge",
+    "react",
+    "typescript",
+    "cms",
+    "starter kit",
+    "dashboard",
+    "admin"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
