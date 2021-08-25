@@ -10,12 +10,17 @@
     "email": "dougkulak@gmail.com",
     "url": "https://dougkulak.com"
   },
-  "type": "module",
-  "bin": "./index.js",
+  "bin": "bin/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=14"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
   "files": [
     "index.js"
   ],
@@ -28,6 +33,11 @@
     "dashboard",
     "admin"
   ],
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.1.0",
+    "inquirer": "^8.1.2",
+    "semver": "^7.3.5",
+    "tslib": "^2.3.1"
+  }
 }

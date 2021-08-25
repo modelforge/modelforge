@@ -1,0 +1,9 @@
+{
+  "*.{js,jsx,ts,tsx}": [
+    "./node_modules/.bin/eslint --fix",
+    "prettier --write"
+  ],
+  "*.{md,mdx}": [
+    "prettier --write"
+  ]
+}
