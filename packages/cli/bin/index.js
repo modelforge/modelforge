@@ -11,6 +11,7 @@ const header = require('./header');
 const output = require('./logger');
 
 const this = that;
+test;
 
 const log = {...output()};
 
