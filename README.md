@@ -18,17 +18,40 @@ ModelForge is an open-source web framework and content management system that ma
 ## Installation Wizard
 
 ```sh
-npx modelforge wizard
+npx modelforge
+```
+
+```
+╭───────────────────────────────────────────────────────────────╮
+│    ____                                                       │
+│   /   /\   _  _ ____ ___  ____ _    ____ ____ ____ ____ ____  │
+│  /___/  \  |\/| |  | |  \ |___ |    |___ |  | |__/ | __ |___  │
+│  \   \  /  |  | |__| |__/ |___ |___ |    |__| |  \ |__] |___  │
+│   \___\/                                                      │
+╰────────────────────────────────────────────────────── v0.0.0 ─╯
+
+Welcome to ModelForge! Complete the following to create your app:
+
+? App Name: my-app
+...
 ```
 
 Or, bypass the wizard:
 ```sh
 npx modelforge init [app-name="my-app"] [template="default"]
 ```
-
 Example:
 ```sh
 $ npx modelforge init
+```
+
+```
+modelforge notice cli v0.0.0
+modelforge info Creating a new ModelForge App:
+modelforge info        name: my-app
+modelforge info    template: default
+modelforge info   directory: /users/doug/projects/my-app
+...
 ```
 
 ## Contact

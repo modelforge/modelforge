@@ -19,11 +19,12 @@ const cliHeader = () => {
   log.notice(chalk`{magenta cli} v${packageJson.version}`);
 };
 
-const processSelections = (name, template) => {
+const processSelections = (name, template, dir) => {
   cliHeader();
   log.info(`Creating a new ${config.frameworkName} App:`);
-  log.info(chalk`      name: {magenta ${name}}`);
-  log.info(chalk`  template: {magenta ${template}}`);
+  log.info(chalk`       name: {magenta ${name}}`);
+  log.info(chalk`   template: {magenta ${template}}`);
+  log.info(chalk`  directory: {magenta ${dir}}`);
 };
 
 const processContribSelections = (command) => {
@@ -85,20 +86,22 @@ const showWizard = () => {
           });
       }
 
+      const dir = `${process.cwd()}/${answers.name}`;
+
       // Confirm new app creation
       inquirer
         .prompt([
           {
             type: 'confirm',
             name: 'confirm',
-            message: chalk`Create a new ModelForge app in the following directory?\n  {yellow ${answers.name}}`,
+            message: chalk`Confirm creation of new ModelForge app in:\n  {yellow ${dir}}`,
             default: true,
           },
         ])
         .then(({confirm}) => {
           if (confirm) {
             // Process
-            processSelections(answers.name, template);
+            processSelections(answers.name, template, dir);
           }
         });
     });
